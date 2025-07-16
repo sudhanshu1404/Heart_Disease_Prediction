@@ -22,4 +22,4 @@ def predict():
         return render_template('index.html', prediction_text=f"Prediction: {result}")
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0')
+    app.run(debug=True, host='0.0.0.0')
