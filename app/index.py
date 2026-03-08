@@ -7,7 +7,7 @@ from app.utils.preprocess import preprocess_input
 app = Flask(__name__)
 
 # Load trained model
-model = joblib.load('models/model.pkl')
+model = joblib.load('../models/model.pkl')
 
 @app.route('/')
 def home():
