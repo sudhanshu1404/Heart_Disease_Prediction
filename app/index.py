@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 import numpy as np
 import joblib
 from utils.preprocess import preprocess_input
-from utils.helpers import preprocess_input
+
 
 
 app = Flask(__name__)
@@ -20,9 +20,9 @@ def predict():
         data = request.form.to_dict()
         features = preprocess_input(data)
         print(f"{features=}")
-        prediction = model.predict(features[0])
+        prediction = model.predict(features)
         result = "High Risk" if prediction == 1 else "Low Risk"
         return render_template('index.html', prediction_text=f"Prediction: {result}")
 
-if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+def handler(request, response):
+    return app(request, response)
