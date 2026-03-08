@@ -1,8 +1,7 @@
 from flask import Flask, render_template, request
 import numpy as np
 import joblib
-from utils.preprocess import preprocess_input
-
+from app.utils.preprocess import preprocess_input
 
 
 app = Flask(__name__)
